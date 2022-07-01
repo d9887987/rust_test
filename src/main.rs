@@ -29,6 +29,6 @@ fn main()  {
     // let string = String::from("hello world");
     // let slice1 = ownership::slice(&string[..]);
     // println!("{}", slice1);
-    enumeg::test_add();
+    enumeg::hash();
 
 }
