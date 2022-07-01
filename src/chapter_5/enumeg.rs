@@ -1,3 +1,5 @@
+use crate::ownership::slice;
+
 pub enum Relation{
     Book(String),
     Info(String),
@@ -21,4 +23,8 @@ pub fn add(a:&i32,b :&i32) ->i32{
 
 pub fn add01(a:i32,b:i32)->i32{
     a+b
+}
+
+pub fn str_add(s:String,s1:String)->String{
+    s1
 }
