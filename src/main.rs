@@ -8,11 +8,10 @@
 // use crate::chapter_5::enumeg;
 // use crate::chapter_6::{my_hash};
 // use crate::chapter_7::closure;
-//use crate::chapter_8::{filter_test, while_let,iter};
-
-use crate::chapter_9::traits;
-use crate::traits::Animals;
-use crate::traits::Classification::Dog;
+// use crate::chapter_8::{filter_test, while_let,iter};
+// use crate::chapter_9::traits;
+// use crate::traits::Animals;
+// use crate::traits::Classification::Dog;
 
 // mod user_info;
 // mod book_info;
@@ -23,7 +22,7 @@ use crate::traits::Classification::Dog;
 // mod chapter_6;
 // mod chapter_7;
 // mod chapter_8;
-mod chapter_9;
+// mod chapter_9;
 
 
 fn main() {
