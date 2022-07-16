@@ -10,6 +10,10 @@
 // use crate::chapter_7::closure;
 //use crate::chapter_8::{filter_test, while_let,iter};
 
+use crate::chapter_9::traits;
+use crate::traits::Animals;
+use crate::traits::Classification::Dog;
+
 // mod user_info;
 // mod book_info;
 // mod chapter_2;
@@ -45,5 +49,11 @@ fn main() {
     // filter_test::filter_up();
     // iter::iter_demo();
     // while_let::while_let();
+    let dog=traits::Car{
+        class: Dog,
+        name: "ba dou".to_string()
+    };
+    dog.eat();
+    dog.call();
 
 }
