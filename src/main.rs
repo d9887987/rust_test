@@ -1,3 +1,13 @@
+// use crate::book_info::info_mation;
+// use crate::book_info::service_info;
+// use crate::user_info::user;
+// use crate::user_info::service_go;
+// use crate::chapter_2::guess_games;
+// use crate::chapter_3::basic_grammar;
+// use crate::chapter_4::ownership;
+// use crate::chapter_5::enumeg;
+// use crate::chapter_6::{my_hash};
+// use crate::chapter_7::closure;
 use crate::chapter_8::filter_test;
 
 // mod user_info;
@@ -9,17 +19,6 @@ use crate::chapter_8::filter_test;
 // mod chapter_6;
 // mod chapter_7;
 mod chapter_8;
-
-// use crate::book_info::info_mation;
-// use crate::book_info::service_info;
-// use crate::user_info::user;
-// use crate::user_info::service_go;
-// use crate::chapter_2::guess_games;
-// use crate::chapter_3::basic_grammar;
-// use crate::chapter_4::ownership;
-// use crate::chapter_5::enumeg;
-//use crate::chapter_6::{my_hash};
-// use crate::chapter_7::closure;
 
 
 fn main() {
@@ -44,4 +43,6 @@ fn main() {
     // println!("{:?}", num);
     filter_test::filter_up();
     filter_test::iter_demo();
+    filter_test::while_let();
+
 }
