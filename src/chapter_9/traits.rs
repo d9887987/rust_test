@@ -1,5 +1,5 @@
 #[derive(Debug)]
-enum Classification {
+pub enum Classification {
     Dog,
     Person,
     Car,
