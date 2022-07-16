@@ -1,18 +1,20 @@
-mod user_info;
-mod book_info;
-mod chapter_2;
-mod chapter_3;
-mod chapter_4;
-mod chapter_5;
+// mod user_info;
+// mod book_info;
+// mod chapter_2;
+// mod chapter_3;
+// mod chapter_4;
+// mod chapter_5;
+mod chapter_6;
 
-use crate::book_info::info_mation;
-use crate::book_info::service_info;
-use crate::user_info::user;
-use crate::user_info::service_go;
-use crate::chapter_2::guess_games;
-use crate::chapter_3::basic_grammar;
-use crate::chapter_4::ownership;
-use crate::chapter_5::enumeg;
+// use crate::book_info::info_mation;
+// use crate::book_info::service_info;
+// use crate::user_info::user;
+// use crate::user_info::service_go;
+// use crate::chapter_2::guess_games;
+// use crate::chapter_3::basic_grammar;
+// use crate::chapter_4::ownership;
+// use crate::chapter_5::enumeg;
+use crate::chapter_6::my_hash;
 
 
 
@@ -29,6 +31,11 @@ fn main()  {
     // let string = String::from("hello world");
     // let slice1 = ownership::slice(&string[..]);
     // println!("{}", slice1);
-    enumeg::hash();
+    // let nums = vec![1, 2, 3, 4, 5];
+    // let res = enumeg::two_sum(&nums, 4);
+    // println!("{:?}", res);
+    // println!("{:?}", nums);
+
+
 
 }
