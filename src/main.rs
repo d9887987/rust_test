@@ -42,5 +42,6 @@ fn main() {
     // my_hash::demo_hash();
     // let num = closure::sum(7, 8);
     // println!("{:?}", num);
-    filter_test::filter_up()
+    filter_test::filter_up();
+    filter_test::iter_demo();
 }
