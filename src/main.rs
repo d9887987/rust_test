@@ -8,7 +8,7 @@
 // use crate::chapter_5::enumeg;
 // use crate::chapter_6::{my_hash};
 // use crate::chapter_7::closure;
-use crate::chapter_8::filter_test;
+//use crate::chapter_8::{filter_test, while_let,iter};
 
 // mod user_info;
 // mod book_info;
@@ -18,7 +18,7 @@ use crate::chapter_8::filter_test;
 // mod chapter_5;
 // mod chapter_6;
 // mod chapter_7;
-mod chapter_8;
+// mod chapter_8;
 
 
 fn main() {
@@ -41,8 +41,8 @@ fn main() {
     // my_hash::demo_hash();
     // let num = closure::sum(7, 8);
     // println!("{:?}", num);
-    filter_test::filter_up();
-    filter_test::iter_demo();
-    filter_test::while_let();
+    // filter_test::filter_up();
+    // iter::iter_demo();
+    // while_let::while_let();
 
 }
