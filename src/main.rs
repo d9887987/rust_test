@@ -18,6 +18,8 @@
 // use crate::chapter_9::default;
 // use crate::default::Package;
 
+use crate::chapter_10::generic::{Cargo, process_item, Rustc};
+
 // mod user_info;
 // mod book_info;
 // mod chapter_2;
@@ -31,7 +33,7 @@
 mod chapter_10;
 
 
-fn main() {
+fn main()  {
     //guess_games::guess_games_num();
     // basic_grammar::variable();
     // basic_grammar::loop_control_flow();
@@ -66,6 +68,8 @@ fn main() {
     //
     // let x1 = Package::new(15);
     // println!("{:#?}", x1);
-
+    let cargo = Cargo::default();
+    process_item(cargo);
+    process_item(Rustc::default());
 
 }
