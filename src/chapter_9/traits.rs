@@ -50,6 +50,12 @@ impl Animals for Person {
     }
 }
 
+
+pub fn inter(t: &impl Animals) {
+    t.eat();
+    t.call();
+}
+
 impl Animals for Car {
     fn eat(&self) {
         println!("{:?}", self.class)
