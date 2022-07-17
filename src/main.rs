@@ -19,6 +19,7 @@
 // use crate::default::Package;
 
 use crate::chapter_10::generic::{Cargo, process_item, Rustc};
+use crate::chapter_10::structs;
 
 // mod user_info;
 // mod book_info;
@@ -71,5 +72,6 @@ fn main()  {
     let cargo = Cargo::default();
     process_item(cargo);
     process_item(Rustc::default());
+    structs::structs()
 
 }
