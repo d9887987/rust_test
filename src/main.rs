@@ -18,8 +18,10 @@
 // use crate::chapter_9::default;
 // use crate::default::Package;
 
-use crate::chapter_10::generic::{Cargo, process_item, Rustc};
-use crate::chapter_10::structs;
+// use crate::chapter_10::generic::{Cargo, process_item, Rustc};
+// use crate::chapter_10::structs;
+
+use crate::chapter_11::trait_object::test_trait;
 
 // mod user_info;
 // mod book_info;
@@ -31,7 +33,8 @@ use crate::chapter_10::structs;
 // mod chapter_7;
 // mod chapter_8;
 // mod chapter_9;
-mod chapter_10;
+// mod chapter_10;
+mod chapter_11;
 
 
 fn main()  {
@@ -69,9 +72,10 @@ fn main()  {
     //
     // let x1 = Package::new(15);
     // println!("{:#?}", x1);
-    let cargo = Cargo::default();
-    process_item(cargo);
-    process_item(Rustc::default());
-    structs::structs()
+    // let cargo = Cargo::default();
+    // process_item(cargo);
+    // process_item(Rustc::default());
+    // structs::structs()
+    test_trait()
 
 }
