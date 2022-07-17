@@ -28,6 +28,7 @@
 // mod chapter_7;
 // mod chapter_8;
 // mod chapter_9;
+mod chapter_10;
 
 
 fn main() {
@@ -60,7 +61,6 @@ fn main() {
     // inter(&traits::Dog { class: Classification::Dog, name: "test xx".to_string() });
     // dog.eat();
     // dog.call();
-
     // let package = Package::default();
     // println!("{:#?}", package);
     //
