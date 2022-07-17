@@ -1,3 +1,5 @@
+// use crate::chapter_9::traits;
+// use crate::traits::{Animals, Classification, inter};
 // use crate::book_info::info_mation;
 // use crate::book_info::service_info;
 // use crate::user_info::user;
@@ -48,11 +50,11 @@ fn main() {
     // filter_test::filter_up();
     // iter::iter_demo();
     // while_let::while_let();
-    let dog=traits::Car{
-        class: Dog,
-        name: "ba dou".to_string()
-    };
-    dog.eat();
-    dog.call();
-
+    // let dog = traits::Car {
+    //     class: Dog,
+    //     name: "ba dou".to_string(),
+    // };
+    // inter(&traits::Dog { class: Classification::Dog, name: "test xx".to_string() });
+    // dog.eat();
+    // dog.call();
 }
