@@ -18,6 +18,7 @@ impl Material for Carpet {
         self.0
     }
 }
+
 struct Tile(f64);
 
 impl Material for Tile {
@@ -29,6 +30,7 @@ impl Material for Tile {
         self.0
     }
 }
+
 struct Wood(f64);
 
 impl Material for Wood {
@@ -41,17 +43,17 @@ impl Material for Wood {
     }
 }
 
-fn total_cost(material: &Vec<Box<dyn Material>>)->f64{
-    material.iter().map(|mat|mat.total_cost()).sum()
+fn total_cost(material: &Vec<Box<dyn Material>>) -> f64 {
+    material.iter().map(|mat| mat.total_cost()).sum()
 }
 
 
-pub fn  test_trait(){
+pub fn test_trait() {
     let carpet = Box::new(Carpet(20.0));
     let title = Box::new(Tile(20.0));
     let wood = Box::new(Wood(20.0));
 
-    let vec1:Vec<Box<dyn Material>> = vec![carpet, title, wood];
+    let vec1: Vec<Box<dyn Material>> = vec![carpet, title, wood];
     let cost = total_cost(&vec1);
     println!("{}", cost);
 }
