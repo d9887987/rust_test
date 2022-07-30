@@ -77,6 +77,6 @@ fn main()  {
     // process_item(cargo);
     // process_item(Rustc::default());
     // structs::structs()
-    test_trait()
+    //test_trait()
 
 }
