@@ -123,4 +123,40 @@ mod tests {
         println!("{:?}", set);
     }
 
+    #[test]
+    fn owner_var(){
+        let y;
+        {
+            let x=5;
+            y=x;
+        }
+        println!("{}", y);
+    }
+
+  /*  #[test]
+    fn owner_re(){
+        let y;
+        {
+            let x=5;
+            y=&x;
+        }
+        println!("{}", y);
+    }*/
+
+    #[test]
+    fn longest_test(){
+        let string1 = String::from("long string is long");//s1在整个方法中有效
+        let result;
+        {
+            let string2 =String::from("xyz");//s2在当前作用域中有效
+            result = longest(string1.as_str(), string2.as_str());
+        }
+        println!("{}",result)
+    }
+
+
+    fn longest<'a>(x:&'a str,y:&str)->&'a str{
+       x
+    }
+
 }
