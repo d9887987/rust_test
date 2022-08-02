@@ -1,1 +1,2 @@
-mod life_cycle;
+pub mod life_cycle;
+mod tests;
