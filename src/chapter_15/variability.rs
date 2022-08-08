@@ -19,14 +19,12 @@ impl Person {
     }
 }
 
-type CellPerson=Cell<Person>;
-pub fn modify_internal_properties(){
+type CellPerson = Cell<Person>;
+pub fn modify_internal_properties() {
     let p1 = Person::new(String::from("deng"), 21, 175.0, 75.0);
     let person = CellPerson::new(p1);
     let person1 = Person::new(String::from("xiong"), 21, 175.0, 75.0);
     person.set(person1);
 }
 
-type ReCellPerson=RefCell<Person>;
-
-
+type ReCellPerson = RefCell<Person>;

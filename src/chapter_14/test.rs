@@ -24,10 +24,16 @@ mod test {
         println!("{:?}", add_later());
     }
 
-
     #[test]
     fn console() {
-        let mut array: [[i32; 5]; 6] = [[0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4]];
+        let mut array: [[i32; 5]; 6] = [
+            [0, 1, 2, 3, 4],
+            [0, 1, 2, 3, 4],
+            [0, 1, 2, 3, 4],
+            [0, 1, 2, 3, 4],
+            [0, 1, 2, 3, 4],
+            [0, 1, 2, 3, 4],
+        ];
 
         for x in &mut array {
             for x in x {
@@ -46,7 +52,8 @@ mod test {
     }
 
     fn boor<'a, 't>(x: &'a str, y: &'a str) -> &'t str
-        where 'a: 't
+    where
+        'a: 't,
     {
         return x;
     }

@@ -43,8 +43,7 @@ mod chapter_14;
 mod chapter_15;
 mod chapter_16;
 
-
-fn main()  {
+fn main() {
     //guess_games::guess_games_num();
     // basic_grammar::variable();
     // basic_grammar::loop_control_flow();

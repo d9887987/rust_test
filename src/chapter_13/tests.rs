@@ -1,16 +1,14 @@
-
 #[cfg(test)]
-mod tests{
+mod tests {
     #[test]
-    fn owner_ship(){
+    fn owner_ship() {
         let string1 = String::from("hello world");
         let word;
         {
             let string2 = String::from("java golang and rust");
             word = long_word(string1.as_str(), string2.as_str());
         }
-        println!("{}",word);
-
+        println!("{}", word);
     }
 
     fn long_word<'a>(p0: &'a str, p1: &str) -> &'a str {
@@ -22,7 +20,7 @@ mod tests{
     }*/
 
     #[test]
-    fn return_string(){
+    fn return_string() {
         let string2 = get_string();
     }
 

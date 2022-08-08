@@ -47,7 +47,6 @@ fn total_cost(material: &Vec<Box<dyn Material>>) -> f64 {
     material.iter().map(|mat| mat.total_cost()).sum()
 }
 
-
 pub fn test_trait() {
     let carpet = Box::new(Carpet(20.0));
     let title = Box::new(Tile(20.0));
@@ -57,24 +56,3 @@ pub fn test_trait() {
     let cost = total_cost(&vec1);
     println!("{}", cost);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

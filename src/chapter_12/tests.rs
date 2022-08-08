@@ -1,6 +1,8 @@
 #[cfg(test)]
 mod tests {
-    use std::collections::{BinaryHeap, BTreeMap, BTreeSet, HashMap, HashSet, LinkedList, VecDeque};
+    use std::collections::{
+        BTreeMap, BTreeSet, BinaryHeap, HashMap, HashSet, LinkedList, VecDeque,
+    };
 
     #[test]
     fn deque() {
@@ -14,7 +16,6 @@ mod tests {
         deque.push_back(300);
         deque.push_back(400);
 
-
         for x in deque.iter() {
             println!("{}", x);
         }
@@ -22,7 +23,6 @@ mod tests {
         for x in deque.iter_mut() {
             *x += 15;
         }
-
 
         if let Some(x) = deque.front_mut() {
             *x += 50;
@@ -50,8 +50,6 @@ mod tests {
         }
     }
 
-
-
     #[test]
     fn heap() {
         let mut heap = BinaryHeap::new();
@@ -71,40 +69,40 @@ mod tests {
     }
 
     #[test]
-    fn hash_map(){
+    fn hash_map() {
         let mut map = HashMap::new();
-        map.insert(String::from("hello"),1);//插入，多次插入为更新
-        map.entry(String::from("golang")).or_insert(2);//不存在则插入
+        map.insert(String::from("hello"), 1); //插入，多次插入为更新
+        map.entry(String::from("golang")).or_insert(2); //不存在则插入
 
         for (key, value) in &map {
-            println!("{}-{}", key,value);
+            println!("{}-{}", key, value);
         }
     }
 
     #[test]
-    fn num_hash(){
+    fn num_hash() {
         let text = "hello world wonderful world";
         let mut map = HashMap::new();
         for word in text.split_whitespace() {
-            let x = map.entry(word).or_insert(0);//返回对应value的一个可变引用
-            *x+=1;
+            let x = map.entry(word).or_insert(0); //返回对应value的一个可变引用
+            *x += 1;
         }
         println!("{:?}", map);
     }
 
     #[test]
-    fn btree_hash(){
+    fn btree_hash() {
         let text = "hello world wonderful world";
         let mut map = BTreeMap::new();
         for word in text.split_whitespace() {
-            let x = map.entry(word).or_insert(0);//返回对应value的一个可变引用
-            *x+=1;
+            let x = map.entry(word).or_insert(0); //返回对应value的一个可变引用
+            *x += 1;
         }
         println!("{:?}", map);
     }
 
     #[test]
-    fn hash_set(){
+    fn hash_set() {
         let text = "hello world wonderful world";
         let mut set = HashSet::new();
         for word in text.split_whitespace() {
@@ -114,7 +112,7 @@ mod tests {
     }
 
     #[test]
-    fn BTree_set(){
+    fn BTree_set() {
         let text = "hello world wonderful world";
         let mut set = BTreeSet::new();
         for word in text.split_whitespace() {
@@ -124,16 +122,16 @@ mod tests {
     }
 
     #[test]
-    fn owner_var(){
+    fn owner_var() {
         let y;
         {
-            let x=5;
-            y=x;
+            let x = 5;
+            y = x;
         }
         println!("{}", y);
     }
 
-  /*  #[test]
+    /*  #[test]
     fn owner_re(){
         let y;
         {
@@ -144,19 +142,17 @@ mod tests {
     }*/
 
     #[test]
-    fn longest_test(){
-        let string1 = String::from("long string is long");//s1在整个方法中有效
+    fn longest_test() {
+        let string1 = String::from("long string is long"); //s1在整个方法中有效
         let result;
         {
-            let string2 =String::from("xyz");//s2在当前作用域中有效
+            let string2 = String::from("xyz"); //s2在当前作用域中有效
             result = longest(string1.as_str(), string2.as_str());
         }
-        println!("{}",result)
+        println!("{}", result)
     }
 
-
-    fn longest<'a>(x:&'a str,y:&str)->&'a str{
-       x
+    fn longest<'a>(x: &'a str, y: &str) -> &'a str {
+        x
     }
-
 }
