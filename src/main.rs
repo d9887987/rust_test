@@ -22,6 +22,7 @@
 // use crate::chapter_10::structs;
 
 use crate::chapter_11::trait_object::test_trait;
+use crate::chapter_15::variability;
 
 // mod user_info;
 // mod book_info;
@@ -38,6 +39,7 @@ mod chapter_11;
 mod chapter_12;
 mod chapter_13;
 mod chapter_14;
+mod chapter_15;
 
 
 fn main()  {
@@ -80,5 +82,6 @@ fn main()  {
     // process_item(Rustc::default());
     // structs::structs()
     //test_trait()
+    variability::modify_internal_properties()
 
 }
