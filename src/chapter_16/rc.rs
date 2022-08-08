@@ -1,5 +1,5 @@
 use std::rc::Rc;
-use std::sync::Arc;
+use std::sync::{Arc, mpsc};
 use std::thread;
 
 #[derive(Debug)]
@@ -37,5 +37,21 @@ pub fn rc_count(){
 
 pub fn arc_count(){
     let p1 = Person::new(String::from("deng"), 21, 175.0, 75.0);
+    let handle = thread::spawn(|p: Person| {
+        println!("{:?}", p1);
+    });
+    //使子线程运行结束后在停止运行程序
+    handle.join().unwrap();
+
+    let (tx,rx) = mpsc::channel();
+    //可以有多个发送者
+    thread::spawn(move || {
+        let val = String::from("hi");
+        tx.send(val).unwrap();
+    });
+
+    //只能有一个接收者，但是可以使用借用clone来添加消费者
+    let received = rx.recv().unwrap();
+    println!("Got: {}", received);
 
 }
