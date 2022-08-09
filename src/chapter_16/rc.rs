@@ -37,31 +37,31 @@ pub fn rc_count() {
     println!("{:?}", rc3);
 }
 
-pub fn arc_count() {
-    let p1 = Person::new(String::from("deng"), 21, 175.0, 75.0);
-    let handle = thread::spawn(|p: Person| {
-        println!("{:?}", p1);
-    });
-    //使子线程运行结束后在停止运行程序
-    handle.join().unwrap();
-
-    let (tx, rx) = mpsc::channel();
-    //可以有多个发送者
-    thread::spawn(move || {
-        let val = String::from("hi");
-        tx.send(val).unwrap();
-    });
-
-    //只能有一个接收者，但是可以使用借用clone来添加消费者
-    let string = rx.recv();
-
-    match string {
-        Ok(message) => {
-            println!("{}", message)
-        }
-        Err(e) => {
-            println!("{}", e)
-        }
-    }
-    println!("Got: {}", received);
-}
+// pub fn arc_count() {
+//     let p1 = Person::new(String::from("deng"), 21, 175.0, 75.0);
+//     let handle = thread::spawn(|p: Person| {
+//         println!("{:?}", p1);
+//     });
+//     //使子线程运行结束后在停止运行程序
+//     handle.join().unwrap();
+//
+//     let (tx, rx) = mpsc::channel();
+//     //可以有多个发送者
+//     thread::spawn(move || {
+//         let val = String::from("hi");
+//         tx.send(val).unwrap();
+//     });
+//
+//     //只能有一个接收者，但是可以使用借用clone来添加消费者
+//     let string = rx.recv();
+//
+//     match string {
+//         Ok(message) => {
+//             println!("{}", message)
+//         }
+//         Err(e) => {
+//             println!("{}", e)
+//         }
+//     }
+//     println!("Got: {}", received);
+// }

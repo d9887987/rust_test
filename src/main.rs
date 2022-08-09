@@ -42,6 +42,7 @@ mod chapter_13;
 mod chapter_14;
 mod chapter_15;
 mod chapter_16;
+mod chapter_17;
 
 fn main() {
     //guess_games::guess_games_num();
@@ -84,5 +85,5 @@ fn main() {
     // structs::structs()
     //test_trait()
     //variability::modify_internal_properties()
-    rc::rc_count()
+    //rc::rc_count()
 }
