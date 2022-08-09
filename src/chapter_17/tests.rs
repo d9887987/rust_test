@@ -2,7 +2,7 @@ use std::ptr::addr_of_mut;
 
 #[cfg(test)]
 mod tests {
-    use crate::chapter_17::tests::{combination_sum, combination_sum2, length_of_last_word, trap};
+    use crate::chapter_17::tests::{combination_sum, combination_sum2, length_of_last_word, permute, trap};
 
     #[test]
     fn test_001() {
@@ -38,6 +38,14 @@ mod tests {
         let num = combination_sum2(nums, target);
         println!("{:?}", num);
     }
+
+    #[test]
+    fn permute_test(){
+        let nums = vec![5, 7, 3, 8];
+        let num = permute(nums);
+        println!("{:?}", num);
+        println!("{}",num.len())
+    }
 }
 
 //最后一个单词长度
@@ -48,7 +56,7 @@ fn length_of_last_word(s: String) -> i32 {
     s.split_whitespace().last().unwrap().len() as i32
 }
 
-//组合，不可重复
+//组合，可重复
 fn combination_sum(mut candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
     candidates.sort();
     fn recursion(candidates: &Vec<i32>, target: i32, index: usize) -> Vec<Vec<i32>> {
@@ -97,7 +105,7 @@ fn trap(height: Vec<i32>) -> i32 {
     ans
 }
 
-//组合可重复
+//组合不可重复
 fn combination_sum2(candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
     let mut candidates = candidates;
     candidates.sort();//方便剪枝
@@ -120,5 +128,25 @@ fn combination_sum2(candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
     dfs(&candidates, target, 0, &mut vec![], &mut ans);
     ans
 }
+
+//排列组合
+fn permute(nums:Vec<i32>)->Vec<Vec<i32>>{
+    fn dfs(first: usize, nums: &mut Vec<i32>, ans: &mut Vec<Vec<i32>>) {
+        if first == nums.len() {
+            ans.push(nums.to_vec());
+            return;
+        }
+        for i in first..nums.len() {
+            nums.swap(first, i);
+            dfs(first + 1, nums, ans);
+            nums.swap(first, i);
+        }
+    }
+    let mut ans = Vec::new();
+    let mut nums = nums;
+    dfs(0, &mut nums, &mut ans);
+    ans
+}
+
 
 
