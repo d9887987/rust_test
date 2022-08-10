@@ -179,20 +179,25 @@ pub fn permute_unique(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
     }
     nums.sort_unstable();
     let mut stack = vec![];
+    //结果
     let mut ans = vec![];
+    //标记向量
     let mut used = vec![false; nums.len()];
     fn dfs(nums: &Vec<i32>, depth: usize, stack: &mut Vec<i32>, ans: &mut Vec<Vec<i32>>, used: &mut Vec<bool>) {
+        //递归出口
         if stack.len() == nums.len() || depth == nums.len() {
             ans.push(stack.to_owned());
             return;
         }
         for n in 0..nums.len() {
+            //重复元素
             if (n > 0 && nums[n] == nums[n - 1] && !used[n - 1]) || used[n] {
                 continue;
             }
             stack.push(nums[n]);
             used[n] = true;
             dfs(nums, depth + 1, stack, ans, used);
+            //剪枝
             stack.pop();
             used[n] = false;
         }
