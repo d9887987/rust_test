@@ -1,8 +1,9 @@
+use std::cmp;
 use std::ptr::addr_of_mut;
 
 #[cfg(test)]
 mod tests {
-    use crate::chapter_17::tests::{combination_sum, combination_sum2, length_of_last_word, permute, trap};
+    use crate::chapter_17::tests::{combination_sum, combination_sum2, jump2, length_of_last_word, permute, trap};
 
     #[test]
     fn test_001() {
@@ -40,11 +41,18 @@ mod tests {
     }
 
     #[test]
-    fn permute_test(){
+    fn permute_test() {
         let nums = vec![5, 7, 3, 8];
         let num = permute(nums);
         println!("{:?}", num);
-        println!("{}",num.len())
+        println!("{}", num.len())
+    }
+
+    #[test]
+    fn jump_test(){
+        let nums =vec![2,3,4,5,1,1,1,1,1,1,2];
+        let i = jump2(nums);
+        println!("{}", i);
     }
 }
 
@@ -130,7 +138,7 @@ fn combination_sum2(candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
 }
 
 //排列组合
-fn permute(nums:Vec<i32>)->Vec<Vec<i32>>{
+fn permute(nums: Vec<i32>) -> Vec<Vec<i32>> {
     fn dfs(first: usize, nums: &mut Vec<i32>, ans: &mut Vec<Vec<i32>>) {
         if first == nums.len() {
             ans.push(nums.to_vec());
@@ -146,6 +154,22 @@ fn permute(nums:Vec<i32>)->Vec<Vec<i32>>{
     let mut nums = nums;
     dfs(0, &mut nums, &mut ans);
     ans
+}
+
+//跳跃游戏2
+fn jump2(nums: Vec<i32>) -> i32 {
+    let mut steps = 0 as i32;
+    let mut end = 0 as i32;
+    let mut max = 0 as i32;
+
+    for x in 0..nums.len() - 1 {
+        let max = cmp::max(max, nums[x] + (x as i32));
+        if (x as i32) == end {
+            end = max;
+            steps += 1;
+        }
+    }
+    steps
 }
 
 
