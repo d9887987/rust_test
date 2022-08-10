@@ -3,7 +3,7 @@ use std::ptr::addr_of_mut;
 
 #[cfg(test)]
 mod tests {
-    use crate::chapter_17::tests::{combination_sum, combination_sum2, jump2, length_of_last_word, permute, trap};
+    use crate::chapter_17::tests::{combination_sum, combination_sum2, jump2, length_of_last_word, permute, permute_unique, trap};
 
     #[test]
     fn test_001() {
@@ -53,6 +53,12 @@ mod tests {
         let nums = vec![2, 3, 4, 5, 1, 1, 1, 1, 1, 1, 2];
         let i = jump2(nums);
         println!("{}", i);
+    }
+
+    #[test]
+    fn permute_unique_test(){
+        let mut nums = vec![1,2,3,4,5,6,8,9,0];
+        let unique = permute_unique(nums);
     }
 }
 
