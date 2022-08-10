@@ -49,8 +49,8 @@ mod tests {
     }
 
     #[test]
-    fn jump_test(){
-        let nums =vec![2,3,4,5,1,1,1,1,1,1,2];
+    fn jump_test() {
+        let nums = vec![2, 3, 4, 5, 1, 1, 1, 1, 1, 1, 2];
         let i = jump2(nums);
         println!("{}", i);
     }
@@ -170,6 +170,35 @@ fn jump2(nums: Vec<i32>) -> i32 {
         }
     }
     steps
+}
+
+
+pub fn permute_unique(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
+    if nums.len() <= 1 {
+        return vec![nums];
+    }
+    nums.sort_unstable();
+    let mut stack = vec![];
+    let mut ans = vec![];
+    let mut used = vec![false; nums.len()];
+    fn dfs(nums: &Vec<i32>, depth: usize, stack: &mut Vec<i32>, ans: &mut Vec<Vec<i32>>, used: &mut Vec<bool>) {
+        if stack.len() == nums.len() || depth == nums.len() {
+            ans.push(stack.to_owned());
+            return;
+        }
+        for n in 0..nums.len() {
+            if (n > 0 && nums[n] == nums[n - 1] && !used[n - 1]) || used[n] {
+                continue;
+            }
+            stack.push(nums[n]);
+            used[n] = true;
+            dfs(nums, depth + 1, stack, ans, used);
+            stack.pop();
+            used[n] = false;
+        }
+    }
+    dfs(&nums, 0, &mut stack, &mut ans, &mut used);
+    ans
 }
 
 
