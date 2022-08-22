@@ -10,6 +10,34 @@ mod test {
         assert_ne!(5, 4)
     }
 
+    #[test]
+    fn te1() {
+        let a;
+        {
+            let b = 5;
+            a = b;
+        }
+        println!("{}", a);
+    }
+
+    #[test]
+    fn te2() {
+        let p1;
+        {
+            let p2 = Person {
+                name: "hello".to_string(),
+                age: 15,
+            };
+            p1 = p2;
+        }
+        println!("{:?}", p1);
+    }
+
+    #[derive(Debug)]
+    struct Person {
+        name: String,
+        age: i32,
+    }
 
     pub fn merge(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
         let mut m = m as usize;
