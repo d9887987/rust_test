@@ -21,9 +21,12 @@
 // use crate::chapter_10::generic::{Cargo, process_item, Rustc};
 // use crate::chapter_10::structs;
 
+use multithread::thread_demo;
 use crate::chapter_11::trait_object::test_trait;
 use crate::chapter_15::variability;
 use crate::chapter_16::rc;
+use crate::chapter_20::multithread;
+use crate::multithread::{mutex_demo, update_demo};
 
 // mod user_info;
 // mod book_info;
@@ -45,6 +48,7 @@ mod chapter_16;
 mod chapter_17;
 mod chapter_18;
 mod chapter_19;
+mod chapter_20;
 
 fn main() {
     //guess_games::guess_games_num();
@@ -88,4 +92,7 @@ fn main() {
     //test_trait()
     //variability::modify_internal_properties()
     //rc::rc_count()
+    thread_demo();
+    mutex_demo();
+    update_demo();
 }
