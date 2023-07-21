@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use crate::ownership::slice;
+use crate::chapter_12::ownership;
 
 pub enum Relation{
     Book(String),

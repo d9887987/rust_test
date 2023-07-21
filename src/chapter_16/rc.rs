@@ -35,6 +35,8 @@ pub fn rc_count() {
     let rc2 = rc.clone();
     let rc3 = rc.clone();
     println!("{:?}", rc3);
+    println!("{:?}", rc1);
+    println!("{:?}", rc2);
 }
 
 // pub fn arc_count() {

@@ -3,7 +3,6 @@ mod tests {
     use std::collections::{
         BTreeMap, BTreeSet, BinaryHeap, HashMap, HashSet, LinkedList, VecDeque,
     };
-    use std::collections::vec_deque::VecDeque;
 
     #[test]
     fn deque() {

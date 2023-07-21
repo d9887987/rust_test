@@ -28,17 +28,17 @@ use crate::chapter_16::rc;
 use crate::chapter_20::multithread;
 use crate::multithread::{mutex_demo, update_demo};
 
-// mod user_info;
-// mod book_info;
-// mod chapter_2;
-// mod chapter_3;
-// mod chapter_4;
-// mod chapter_5;
-// mod chapter_6;
-// mod chapter_7;
-// mod chapter_8;
-// mod chapter_9;
-// mod chapter_10;
+mod user_info;
+mod book_info;
+mod chapter_2;
+mod chapter_3;
+mod chapter_4;
+mod chapter_5;
+mod chapter_6;
+mod chapter_7;
+mod chapter_8;
+mod chapter_9;
+mod chapter_10;
 mod chapter_11;
 mod chapter_12;
 mod chapter_13;
@@ -91,8 +91,8 @@ fn main() {
     // structs::structs()
     //test_trait()
     //variability::modify_internal_properties()
-    //rc::rc_count()
-    thread_demo();
-    mutex_demo();
-    update_demo();
+    rc::rc_count()
+    //thread_demo();
+    //mutex_demo();
+    //update_demo();
 }
